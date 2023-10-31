@@ -5,8 +5,10 @@ if [ -z $1 ] ; then       # if first command is empty
     exit 1 
 fi
 
-for file in $(dirname $0)/*.test ; do
+for file in $(dirname $0)/?.test ; do
         echo -n "$file: "; cat $file; cat $file | $1  
 done
 
-
+for file in $(dirname $0)/1?.test ; do
+        echo -n "$file: "; cat $file; cat $file | $1  
+done
