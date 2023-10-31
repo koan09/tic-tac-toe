@@ -18,6 +18,8 @@ int main(){
 
 int readInput(FILE* input, char* plek){
 	int i = 0;
+	int counterX = 0;
+	int counterO = 0;
 	char c;
 	extern FILE* stderr;
 
@@ -28,9 +30,28 @@ int readInput(FILE* input, char* plek){
 			fputs("Error, too many chars\n", stderr);
 			return 1;
 		}
-	}
+		if (c == 'X'){
+			counterX ++;
+			if (counterX >= 5){
+			printf ("X played unfair \n");
+			}
+		}
+		else{
+			return 0;
+		}
+		if (c == 'O'){
+			counterX ++;
+				if (counterO >= 5){
+				printf ("O played unfair \n");
+				}
+		}
+		else {
+			return 0;
+		}
+
 	plek[10] = '\0';
 	return 0;
+}
 }
 
 char winner(char* plek){
